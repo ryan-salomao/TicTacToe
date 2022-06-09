@@ -41,7 +41,7 @@ def play(player, table):
       print("\ninvalid play.\n")
 
 j = 0  
-while j < 8:
+while j < 9:
   play(player1, table)
   display_table(table)
   print("\n")
