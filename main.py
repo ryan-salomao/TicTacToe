@@ -17,13 +17,30 @@ display_table(table)
 def play(player, table):
   i = 0
   while i == 0:
-    line = int(input(f"player{player}, pick a line: "))
-    column = int(input(f"player{player}, pick a column: "))
+    j = 0
+    k = 0
+    while j == 0:
+      line = int(input(f"player{player}, pick a line: "))
+      if line > 3 or line < 1:
+        print("invalid line.")
+      
+      else:
+        line = line
+        j += 1
+        
+    while k == 0:
+      column = int(input(f"player{player}, pick a column: "))
+      if column > 3 or column < 1:
+        print("invalid column.")
+      
+      else:
+        column = column
+        k += 1
     if table[line-1][column-1] == 0:
       table[line-1][column-1] = player
       i += 1
     else:
-      print("\ninvalid play.")
+      print("\ninvalid play.\n")
   
 while j < 8:
   play(player1, table)
