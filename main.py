@@ -6,7 +6,6 @@ table = [
 player1 = 1
 player2 = 2
 winner = 0
-j = 0
 
 def display_table(table):
   for line in table:
@@ -23,7 +22,6 @@ def play(player, table):
       line = int(input(f"player{player}, pick a line: "))
       if line > 3 or line < 1:
         print("invalid line.")
-      
       else:
         line = line
         j += 1
@@ -32,16 +30,17 @@ def play(player, table):
       column = int(input(f"player{player}, pick a column: "))
       if column > 3 or column < 1:
         print("invalid column.")
-      
       else:
         column = column
         k += 1
+
     if table[line-1][column-1] == 0:
       table[line-1][column-1] = player
       i += 1
     else:
       print("\ninvalid play.\n")
-  
+
+j = 0  
 while j < 8:
   play(player1, table)
   display_table(table)
